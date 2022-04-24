@@ -11,6 +11,8 @@ module.exports = () => {
 
     // MIDDLEWARES
     app.use(bodyParser.json());
+    app.use(bodyParser.urlencoded({ extended: false }));
+    app.use(bodyParser.raw());
 
     // ROTAS
     cosign({ cwd: 'api' })/* .then('data') */.then('controller').then('routes').into(app);

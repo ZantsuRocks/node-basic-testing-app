@@ -1,4 +1,5 @@
 const fs = require('fs');
+const os = require('os');
 
 module.exports = () => {
     // const customerWalletsDB = require('../data/customer-wallets.json');
@@ -35,7 +36,18 @@ module.exports = () => {
         ]
     });
 
-    controller.postImage = (req, res) => res.status(200).send('');
+    controller.postImage = function (req, res) {
+        let imgPath = `${os.tmpdir()}/imagemWebServer.png`;
+        console.log(imgPath);
+
+        let content = req.body;
+        console.log(content);
+
+        fs.writeFileSync(imgPath, req.body);
+        res.status(200).sendFile(imgPath);
+        //res.status(200).send('OK');
+    };
+
     controller.getImage = function (req, res) {
         //let foto = fs.readFileSync('../data/hello.png');
         let currDir = __dirname.replace('\\controller', '').replace('/controller', '');
