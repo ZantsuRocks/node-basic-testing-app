@@ -41,7 +41,6 @@ module.exports = () => {
         console.log(imgPath);
 
         let content = req.body;
-        console.log(content);
 
         fs.writeFileSync(imgPath, req.body);
         res.status(200).sendFile(imgPath);
