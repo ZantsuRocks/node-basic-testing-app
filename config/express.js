@@ -13,7 +13,7 @@ module.exports = () => {
     app.use(bodyParser.json());
 
     // ROTAS
-    cosign({ cwd: 'api' })/* .then('data') */.then('controller').then('routes').into(app)
+    cosign({ cwd: 'api' })/* .then('data') */.then('controller').then('routes').into(app);
     require('../api/routes/mainRoute')(app);
 
     return app;
