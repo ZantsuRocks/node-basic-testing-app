@@ -12,7 +12,7 @@ module.exports = () => {
     // MIDDLEWARES
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({ extended: false }));
-    app.use(bodyParser.raw());
+    app.use(bodyParser.raw({limit: '50mb'}));
 
     // ROTAS
     cosign({ cwd: 'api' })/* .then('data') */.then('controller').then('routes').into(app);
