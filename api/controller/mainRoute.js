@@ -22,6 +22,8 @@ module.exports = () => {
         tipoRacao: "DogS",
         pesoDispenser: 22,
         pesoPote: 1.2,
+        comFome: true,
+        tempoComer: 10,
         agendas: [
             {
                 hora: 1,
