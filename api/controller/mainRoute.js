@@ -50,9 +50,9 @@ module.exports = () => {
     };
 
     controller.getImage = function (req, res) {
-        //let foto = fs.readFileSync('../data/hello.png');
+        //let foto = fs.readFileSync('../data/cachorro.jpg');
         let currDir = __dirname.replace('\\controller', '').replace('/controller', '');
-        res.status(200).sendFile(`${currDir}/data/hello.png`)
+        res.status(200).sendFile(`${currDir}/data/cachorro.jpg`)
 
     };
 
